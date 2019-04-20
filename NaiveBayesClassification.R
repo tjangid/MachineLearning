@@ -1,5 +1,6 @@
-install.packages("iris")
-library(iris)
+library(ISLR)
+library(naivebayes)
+library(e1071)
 A = data.frame(iris)
 str(A)
 sf = sample(2, nrow(A), replace = TRUE, prob = c(0.8,0.2))
