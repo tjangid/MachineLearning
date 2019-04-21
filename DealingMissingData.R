@@ -26,7 +26,7 @@ tsd = FinalDataSet[is.na(FinalDataSet$Sepal.Width)==TRUE,]
 trd = FinalDataSet[is.na(FinalDataSet$Sepal.Width)==FALSE,]
 m3 = lm(Sepal.Width~Sepal.Length+Petal.Length, data = trd)
 pred = predict(m3, tsd)
-tsd[,is.na(tsd$Sepal.Length) ==TRUE]=pred[1]
+tsd[,is.na(tsd$Sepal.Width) ==TRUE]=pred[1]
 FinalDataSet = sqldf::sqldf("Select * from trd UNION ALL Select * from tsd")
 
 NewA = FinalDataSet
